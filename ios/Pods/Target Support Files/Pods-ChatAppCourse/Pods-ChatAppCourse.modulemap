@@ -1,0 +1,6 @@
+module Pods_ChatAppCourse {
+  umbrella header "Pods-ChatAppCourse-umbrella.h"
+
+  export *
+  module * { export * }
+}
