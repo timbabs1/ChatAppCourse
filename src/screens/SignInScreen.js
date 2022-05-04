@@ -7,20 +7,21 @@ import Images from "../Constants/Images";
 import Constants from "../Constants/Constants";
 import DismissKeyboard from "../components/DismissKeyboard";
 import Utility from "../utils/Utility";
+import firebase from "../firebase/Firebase";
 
 
 
 import EmailTextField from "../components/EmailTextField";
 import PasswordTextField from "../components/PasswordTextField";
 
-const SignInScreen = () => {
+const SignInScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const validateEmailAddress = (email) => {
+    const validateEmailAddress = () => {
         const isValidEmail = Utility.isEmailValid(email);
         isValidEmail ? setEmailError('') : setEmailError(Strings.InvalidEmailAddress)
         return isValidEmail
@@ -32,8 +33,49 @@ const SignInScreen = () => {
         return isValidField
     }
 
-    const handleSignIn = () => {
-        setIsLoading(true);
+    const registration = (email, password) => {
+        try {
+            setIsLoading(true);
+            firebase.auth().signInWithEmailAndPassword(email, password).then(user => {
+                setIsLoading(false);
+                // navigation.navigate('GroupScreen');
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: 'GroupScreen' }],
+                });
+                Alert.alert('Logged In');
+
+            }).catch(error => {
+                setIsLoading(false);
+                firebase.auth().createUserWithEmailAndPassword(email, password).then(user => {
+                    setIsLoading(false);
+                    Alert.alert('Registered and created new user');
+                    // navigation.navigate('GroupScreen');
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'Groups Screen' }],
+                    });
+                }).catch(error => {
+                    console.log("error", error.message)
+                    setIsLoading(false);
+                    Alert.alert(error.message);
+                });
+            })
+        } catch (error) {
+            console.log(error)
+            Alert.alert(error.message);
+        }
+    }
+
+    const performAuth = () => {
+        const isValidEmail = validateEmailAddress();
+        const isValidPassword = validatePasswordField();
+
+        if (isValidEmail && isValidPassword) {
+            setEmail('');
+            setPassword('');
+            registration(email, password);
+        }
     }
   return (
       <DismissKeyboard>
@@ -48,6 +90,7 @@ const SignInScreen = () => {
                       onTermChange={(newEmail) => setEmail(newEmail)}
                       onValidateEmailAddress={validateEmailAddress}
                       />
+
                       <PasswordTextField
                       term={password}
                       error={passwordError}
@@ -56,7 +99,7 @@ const SignInScreen = () => {
                       onValidatePasswordField={validatePasswordField}
                       />
 
-                      <Button title={Strings.Join} isLoading={isLoading} />
+                      <Button title={Strings.Join} onPress={performAuth} isLoading={isLoading} />
                   </SafeAreaView>
               </View>
           </KeyboardAvoidingView>

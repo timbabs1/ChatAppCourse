@@ -1,9 +1,9 @@
-import React from "react";
-import { Text, TextInput, StyleSheet, View } from "react-native";
+import React from 'react';
+import { TextInput, Text, StyleSheet, View } from "react-native";
+import Color from '../utils/Colors';
 import Constants from "../Constants/Constants";
-import Colors from "../utils/Colors";
 
-const PasswordTextField = ({term, placeHolder, onTermChange, onValidatePasswordField, error}) => {
+const CustomTextField = ({ term, placeholder, onTermChange, onValidateTextField, error}) => {
     return (
         <View>
             <Text style={styles.ErrorText}>{error}</Text>
@@ -11,11 +11,10 @@ const PasswordTextField = ({term, placeHolder, onTermChange, onValidatePasswordF
                 <TextInput
                     autoCorrect={false}
                     style={styles.TextField}
-                    placeholder={placeHolder}
-                    secureTextEntry={true}
-                    onChangeText={onTermChange}
-                    onEndEditing={onValidatePasswordField}
+                    placeholder={placeholder}
                     value={term}
+                    onChangeText={onTermChange}
+                    onEndEditing={onValidateTextField}
                 />
             </View>
         </View>
@@ -31,18 +30,19 @@ const styles = StyleSheet.create({
     TextFieldView: {
         height: Constants.screenHeight * 0.06,
         width: Constants.screenWidth * 0.85,
-        borderRadius: 5,
         marginTop: 5,
-        borderColor: Colors.black,
+        marginBottom: 5,
+        borderColor: Color.black,
+        borderWidth: 1,
         justifyContent: 'center',
-        backgroundColor: Colors.smoke,
+        backgroundColor: Color.smoke
     },
     ErrorText: {
         fontSize: 12,
-        color: Colors.red,
-        marginBottom: 5,
+        color: Color.red,
+        marginBottom: -5,
         marginHorizontal: 20,
     }
 })
 
-export default PasswordTextField;
+export default CustomTextField;

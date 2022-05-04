@@ -2,32 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b46f3400-467d-42ca-aae0-f17303a3bdc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Constants/Constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constants/Images.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constants/Strings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Navigation/MainStackNavigator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/AddGroupScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/ChatScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/GroupsScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/SignInScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Colors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Utility.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/firebase/Firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/babzhaastrup.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/babzhaastrup.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse-ChatAppCourseTests/Pods-ChatAppCourse-ChatAppCourseTests.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-ChatAppCourse/Pods-ChatAppCourse.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.3.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.3.3/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.3.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.3.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PasswordTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PasswordTextField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/SignInScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/SignInScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +63,10 @@
       <option name="presentableId" value="Default" />
       <updated>1651444691337</updated>
       <workItem from="1651444692820" duration="12813000" />
-      <workItem from="1651493363757" duration="13609000" />
+      <workItem from="1651493363757" duration="19618000" />
+      <workItem from="1651550147728" duration="5722000" />
+      <workItem from="1651556358856" duration="6187000" />
+      <workItem from="1651688307977" duration="3591000" />
     </task>
     <servers />
   </component>
