@@ -26,6 +26,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
+
 export const firestore = firebase.firestore();
+firestore.settings({experimentalForceLongPolling: true, merge: true});
 
 export default firebase;

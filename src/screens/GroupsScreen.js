@@ -19,6 +19,7 @@ const GroupScreen = ({ navigation }) => {
             headerLeft: () => (
 
                     <ButtonWithBackground onPress={() => {
+                        signOutUser();
                     }}
                         image={Images.logout}
                    />
@@ -26,12 +27,27 @@ const GroupScreen = ({ navigation }) => {
         });
     }, [navigation]);
 
+
+    const signOutUser = async () => {
+        try {
+            await firebase.auth().signOut();
+            console.log("signed out");
+            navigation.reset({
+                index: 0,
+                routes: [{ name: "SplashScreen" }],
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         getChats()
     }, []);
 
     const getChats = () => {
         const db = firestore
+        // db.settings({ merge: true });
         let groupArray = [];
 
         db.collection("groups")
@@ -56,11 +72,10 @@ const GroupScreen = ({ navigation }) => {
         <View style={styles.container}>
             <FlatList
                 data={groups}
-                renderItem={({ item}) => {
+                renderItem={({ item }) => {
                     return (
-                        // <Text>Hi there</Text>
                         <TouchableOpacity onPress={() =>{
-                            navigation.navigate('ChatScreen')
+                            navigation.navigate('ChatScreen', {item})
                         }}>
                             <GroupItem item={item}></GroupItem>
                         </TouchableOpacity>
