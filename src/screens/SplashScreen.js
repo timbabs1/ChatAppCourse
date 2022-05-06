@@ -4,6 +4,7 @@ import Color from "../utils/Colors";
 import Images from "../Constants/Images";
 import Constants from "../Constants/Constants";
 import firebase from "../firebase/Firebase";
+import LottieView from "lottie-react-native";
 
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
@@ -29,17 +30,24 @@ const SplashScreen = ({navigation}) => {
                   })
               }
           });
-      }, 1000);
+      }, 1500);
     }
 
     return (
         <View style={styles.container}>
             <Image source={Images.logo} style={styles.logo} />
+            <View style={styles.lottieView}>
+                <LottieView source={require("../../assets/waiting.json")} autoPlay loop></LottieView>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    lottieView: {
+        width: "100%",
+        height: 0.6 * Constants.screenHeight,
+    },
     logo: {
         alignSelf: 'center',
         margin: 0.04 * Constants.screenHeight,

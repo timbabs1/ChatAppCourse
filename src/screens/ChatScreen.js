@@ -7,6 +7,7 @@ import Constants from "../Constants/Constants";
 import Strings from "../Constants/Strings";
 import DismissKeyboard from "../components/DismissKeyboard";
 import MessageItem from "../components/MessageItem";
+import LottieView from "lottie-react-native";
 
 const ChatScreen = ({ route, navigation }) => {
     const [messageList, setMessageList] = useState([]);
@@ -117,41 +118,57 @@ const ChatScreen = ({ route, navigation }) => {
         });
     }
 
-    return (
-        <DismissKeyboard>
-            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}}
-                                  behavior="padding" enabled keyboardVerticalOffset={100}
-            >
-                <View style={styles.container}>
-                    <FlatList
-                        style={styles.flatList}
-                        data={messageList}
-                        keyExtractor={(item, index) => 'key' + index}
-                        renderItem={({item}) => {
-                            return (
-                                <TouchableOpacity onPress={() => {
-                                }}
-                                >
-                                    <MessageItem item={item} />
-                                </TouchableOpacity>
-                            )
-                        }}
-                    />
-                    <View style={styles.messageFieldView}>
-                        <MessageFieldView
-                            term={message}
-                            placeHolder={Strings.typeYourMessage}
-                            onTermChange={message => setMessage(message)}
-                            onSubmit={sendMessagesToChat}
-                            //onSubmit={sendMessagesToChat}
-                        >
+    const showJoinView = () => {
+        return (
+            <LottieView source={require('../../assets/join.json')} autoPlay loop />
+        )
+    }
 
-                        </MessageFieldView>
+    const showChatView = () => {
+        return (
+            <DismissKeyboard>
+                <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}}
+                                      behavior="padding" enabled keyboardVerticalOffset={100}
+                >
+                    <View style={styles.container}>
+                        <FlatList
+                            style={styles.flatList}
+                            data={messageList}
+                            keyExtractor={(item, index) => 'key' + index}
+                            renderItem={({item}) => {
+                                return (
+                                    <TouchableOpacity onPress={() => {
+                                    }}
+                                    >
+                                        <MessageItem item={item} />
+                                    </TouchableOpacity>
+                                )
+                            }}
+                        />
+                        <View style={styles.messageFieldView}>
+                            <MessageFieldView
+                                term={message}
+                                placeHolder={Strings.typeYourMessage}
+                                onTermChange={message => setMessage(message)}
+                                onSubmit={sendMessagesToChat}
+                                //onSubmit={sendMessagesToChat}
+                            >
+
+                            </MessageFieldView>
+                        </View>
                     </View>
-                </View>
 
-            </KeyboardAvoidingView>
-        </DismissKeyboard>
+                </KeyboardAvoidingView>
+            </DismissKeyboard>
+        )
+    }
+
+
+
+    return (
+        <>
+            {isJoined ? showChatView() : showJoinView()}
+        </>
     );
 }
 
